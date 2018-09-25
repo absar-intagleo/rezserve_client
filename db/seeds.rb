@@ -127,12 +127,12 @@ RatingSource::RATINGSOURCES.each do |source|
   RatingSource.find_or_create_by!(name: source)
 end
 
-require "csv"
-CSV.parse(File.read("HotelChains.csv")).each_with_index do |chain, index|
-	if index > 0
-		HotelChain.find_or_create_by!(name: chain.first.split("|").last, chain_code: chain.first.split("|").first)
-	end
-end
+# require "csv"
+# CSV.parse(File.read("HotelChains.csv")).each_with_index do |chain, index|
+# 	if index > 0
+# 		HotelChain.find_or_create_by!(name: chain.first.split("|").last, chain_code: chain.first.split("|").first)
+# 	end
+# end
 
 
 
