@@ -1,0 +1,37 @@
+<div>
+  <div class="modal-dialog login-modal" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title mt-1">Forgot your password?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+              <div class="text-center">    
+                <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %> 
+                  <div id="modal_error_container">
+                    <%= render partial: 'shared/messages' %>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+										    <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true, class: 'form-control', placeholder: 'Email' %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 logn-button">									  
+									    <%= f.submit "Send me reset password instructions", class: 'btn btn-style' %>
+	                  </div>
+                	</div>
+                <% end %>
+              </div>  
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

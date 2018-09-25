@@ -1,0 +1,83 @@
+<div>
+  <div class="modal-dialog login-modal" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title mt-1">Sign in to your Account</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-center">
+              <p>with your social network</p>
+              <div class="social-icons mb-2">
+                <%= link_to facebook_login_users_path, class: 'facebook-icon' do %>
+                  <i class="fa fa-facebook-f"></i>
+                <% end %>
+                <%= link_to google_login_users_path, class: 'goole-icon' do %>
+                  <i class="fa fa-google-plus"></i>
+                <% end %>
+                <%= link_to linkedin_login_users_path, class: 'linkedin-icon' do %>
+                  <i class="fa fa-linkedin"></i>
+                <% end %>
+              </div>
+              <div class="or text-center">
+                <span>or</span>
+              </div>
+              
+              <%= form_for(resource, as: resource_name, url: session_path(resource_name), remote: true) do |f| %> 
+                <div id="modal_error_container">
+                  <%= render partial: 'shared/messages' %>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <%= f.email_field :email, required: true, class: 'form-control', placeholder: 'Email' do %>
+                        <i class="fa fa-lock"></i>
+                      <% end %>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <%= f.password_field :password, required: true, class: 'form-control', placeholder: 'Password' do %>    
+                          <i class="fa fa-lock"></i>
+                        <% end %>  
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 mt-1">
+                      <div class="checkbox checkbox-info float-left">
+                        <input id="checkbox4" type="checkbox">
+                        <label for="checkbox4">
+                          Keep me signed in
+                        </label>
+                      </div> 
+                      <%= link_to 'Recover Password', new_user_password_path, class: 'float-right mr-2 text-color', remote: true, 'data-toggle' =>  "modal", 'data-target' => '#modal_container' %>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 logn-button">
+                      <%= f.submit 'Login', class: 'btn btn-style' %>
+                      </div>
+                  </div>
+              <% end %>
+              <div class="row mt-3 mb-2">
+                <div class="col-md-12">
+                  <div class="text-center">
+
+                    <p>Not a member? <%= link_to 'Create Account', new_user_registration_path, class: 'text-color', remote: true, 'data-toggle' =>  "modal", 'data-target' => '#modal_container' %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

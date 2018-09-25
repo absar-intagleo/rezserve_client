@@ -1,0 +1,96 @@
+  <aside class="main-sidebar"> 
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar"> 
+    <!-- Sidebar user panel -->
+    <% if params[:controller].eql? ("properties") %>
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="active ">
+        	<%= link_to dashboard_index_path do %>
+          	<i class="fa fa-home"></i>
+              <span>Dashboard</span> 
+          <% end %> 
+         </li>
+        <li> 
+        	<a href="#"> 
+        		<i class="fa fa-tv"></i> 
+                <span>Design</span> 
+            </a> 
+        </li>
+        <li> 
+        	<a href="#"> 
+            	<i class="fa fa-building-o"></i> 
+                <span>Companies</span> 
+            </a> 
+       </li>
+        <li class="treeview"> 
+        	<a href="#"> 
+            	<i class="fa fa-columns"></i> 
+                <span>Appartments</span> 
+                	<span class="pull-right-container"> 
+                	<i class="fa fa-angle-right pull-right"></i> 
+                </span> 
+            </a>
+          <ul class="treeview-menu">
+            <li><a href="#">Floor Plans</a></li>
+            <li><a href="#">Floor Plan Amenity Images</a></li>
+          </ul>
+        </li>
+        <li class="treeview"> 
+        	<a href="#">
+            	<i class="fa fa-laptop"></i> 
+                <span>Units</span> 
+                <span class="pull-right-container"> 
+                    <i class="fa fa-angle-right pull-right"></i>
+                 </span> 
+           </a>
+          <ul class="treeview-menu">
+            <li><a href="#">Name Here</a></li>
+            <li><a href="#">Name Here</a></li>
+            <li><a href="#">Name Here</a></li>
+          </ul>
+        </li>
+        <li class="treeview"> 
+        	<a href="#"> 
+            	<i class="fa fa-map-marker"></i> 
+                <span>Property Map</span> 
+                <span class="pull-right-container"> 
+                	<i class="fa fa-angle-right pull-right"></i> 
+                </span> 
+           </a>
+          <ul class="treeview-menu">
+            <li><a href="#">Name Here</a></li>
+            <li><a href="#">Name Here</a></li>
+            <li><a href="#">Name Here</a></li>
+          </ul>
+        </li>
+        <li class="treeview"> <a href="#"> <i class="fa fa-database"></i> <span>Floor Plates</span> <span class="pull-right-container"> <i class="fa fa-angle-right pull-right"></i> </span> </a>
+          <ul class="treeview-menu">
+            <li><a href="#">Name Here</a></li>
+            <li><a href="#">Name Here</a></li>
+            <li><a href="#">Name Here</a></li>
+          </ul>
+        </li>
+        <li> <a href="#"> <i class="fa fa-cubes"></i> <span>Galleries</span> </a> </li>
+        <li> <a href="#"> <i class="fa fa-bank"></i> <span>Neighborhood</span> </a> </li>
+        <li> <a href="#"> <i class="fa fa-star"></i> <span>Favorites</span> </a> </li>
+        <li> <a href="#"> <i class="fa fa-gears"></i> <span>Settings</span> </a> </li>
+      </ul>
+    <% elsif params[:controller].eql? ("dashboard") %>  
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="active">
+          <%= link_to dashboard_index_path do %>
+            <i class="fa fa-home"></i>
+              <span>Dashboard</span> 
+          <% end %> 
+        </li>
+        <li class="">
+          <%= link_to dashboard_index_path do %>
+            <i class="fa fa-list"></i>
+              <span>Properties</span> 
+          <% end %> 
+        </li>
+      </ul>
+    <% end %>  
+  </section>
+  <!-- /.sidebar --> 
+</aside>
